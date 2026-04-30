@@ -424,14 +424,52 @@ function generateCV() {
     return;
   }
 
-  let result = `Full Name: ${name}
+  let result = `==============================
+PROFESSIONAL CV
+==============================
 
-Job Title: ${job}
+FULL NAME:
+${name}
 
-Skills: ${skills}
+TARGET POSITION:
+${job}
 
-Professional Summary:
-${name} is a motivated ${job} with strong skills in ${skills}. Passionate about professional growth, continuous learning, and building successful career opportunities.`;
+PROFESSIONAL SUMMARY:
+Highly motivated and results-driven ${job} with strong expertise in ${skills}.
+Passionate about continuous improvement, teamwork, and delivering high-quality results.
+Able to adapt quickly to new environments and solve problems efficiently.
+Committed to professional excellence and long-term career growth.
+
+CORE SKILLS:
+• ${skills}
+• Communication
+• Teamwork
+• Problem Solving
+• Time Management
+• Adaptability
+
+WORK EXPERIENCE:
+Freelance / Personal Projects
+2023 - Present
+
+• Worked on personal development projects
+• Improved technical and problem-solving skills
+• Learned modern digital tools and workflow systems
+• Built practical experience through self-learning and real-world practice
+
+EDUCATION:
+High School / Ongoing Education
+
+• Focused on personal growth and professional development
+• Continuously improving technical and communication skills
+
+LANGUAGES:
+• English
+• Native Language
+
+REFERENCES:
+Available upon request
+`; Passionate about professional growth, continuous learning, and building successful career opportunities.`;
 
   document.getElementById("output").innerText = result;
 }
