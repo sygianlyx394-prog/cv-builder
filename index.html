@@ -383,8 +383,37 @@
             </div>
         </div>
 
-        <a href="#" class="generate-btn">Generate CV</a>
+        <button type="button" class="generate-btn" onclick="generateCV()">
+  Generate CV
+        </button>
 
     </div>
+    <pre id="output"></pre>
+
+<script>
+function generateCV() {
+  let name = document.getElementById("name").value;
+  let job = document.getElementById("job").value;
+  let skills = document.getElementById("skills").value;
+
+  if (name === "" || job === "" || skills === "") {
+    document.getElementById("output").innerText =
+      "Please fill in all fields.";
+    return;
+  }
+
+  let result =
+`Full Name: ${name}
+
+Job Title: ${job}
+
+Skills: ${skills}
+
+Professional Summary:
+${name} is a motivated ${job} with strong skills in ${skills}.`;
+
+  document.getElementById("output").innerText = result;
+}
+</script>
 </body>
 </html>
