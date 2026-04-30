@@ -1,4 +1,56 @@
-const OPENAI_API_KEY = 'sk-your-actual-key-here';
-git add .
-git commit -m "Add AI CV Generator"
-git push origin main
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>AI CV Generator</title>
+</head>
+
+<body style="font-family: Arial; background:#0f172a; color:white; text-align:center; padding:40px;">
+
+<h1>🧾 AI CV Generator</h1>
+<p>Create your CV in seconds</p>
+
+<hr>
+
+<!-- FORM -->
+<div style="margin-top:20px;">
+  <input id="name" placeholder="Your Name"><br><br>
+  <input id="job" placeholder="Job Title"><br><br>
+  <textarea id="skills" placeholder="Skills"></textarea><br><br>
+
+  <button onclick="generateCV()">Generate CV</button>
+</div>
+
+<hr>
+
+<!-- OUTPUT -->
+<pre id="output" style="text-align:left; max-width:600px; margin:auto; background:#1e293b; padding:20px; border-radius:10px;"></pre>
+
+<script>
+function generateCV() {
+  let name = document.getElementById("name").value;
+  let job = document.getElementById("job").value;
+  let skills = document.getElementById("skills").value;
+
+  if(!name || !job || !skills){
+    document.getElementById("output").innerText = "Please fill all fields.";
+    return;
+  }
+
+  let cv =
+`NAME: ${name}
+
+JOB TITLE: ${job}
+
+SKILLS:
+${skills}
+
+SUMMARY:
+${name} is a motivated ${job.toLowerCase()} with skills in ${skills}.`;
+
+  document.getElementById("output").innerText = cv;
+}
+</script>
+
+</body>
+</html>
