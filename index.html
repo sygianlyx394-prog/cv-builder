@@ -2,101 +2,21 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Daniel Carter - CV</title>
-
-<style>
-  body {
-    margin: 0;
-    font-family: Arial, sans-serif;
-    background: #0f172a;
-    color: #e2e8f0;
-  }
-
-  .container {
-    max-width: 800px;
-    margin: 50px auto;
-    padding: 20px;
-  }
-
-  .card {
-    background: #1e293b;
-    padding: 30px;
-    border-radius: 15px;
-    box-shadow: 0 10px 25px rgba(0,0,0,0.4);
-  }
-
-  h1 {
-    margin-bottom: 5px;
-    color: #38bdf8;
-  }
-
-  .title {
-    color: #94a3b8;
-    margin-bottom: 20px;
-  }
-
-  .section {
-    margin-top: 20px;
-  }
-
-  .section h2 {
-    color: #38bdf8;
-    font-size: 18px;
-    margin-bottom: 8px;
-  }
-
-  .box {
-    background: #0f172a;
-    padding: 10px;
-    border-radius: 10px;
-    margin-top: 5px;
-  }
-
-  .contact {
-    margin-top: 20px;
-    font-size: 14px;
-    color: #94a3b8;
-  }
-
-  .badge {
-    display: inline-block;
-    background: #38bdf8;
-    color: black;
-    padding: 5px 10px;
-    border-radius: 20px;
-    margin: 3px;
-    font-size: 12px;
-  }
-</style>
-
+<title>CV-Builder</title>
 </head>
 
 <body>
 
-<div class="container">
-  <div class="card">
+<!-- HEADER -->
+<header style="text-align:center; padding:20px;">
+  <h1>🧾 CV-Builder</h1>
+  <p>Create your professional CV in seconds</p>
+</header>
 
-    <h1>Daniel Carter</h1>
-    <div class="title">Aspiring Web Developer</div>
-<div style="margin-top:15px;">
-  <a href="mailto:daniel.carter@example.com" style="text-decoration:none;">
-    <button style="padding:10px 15px; border:none; border-radius:8px; background:#38bdf8; color:black; cursor:pointer;">
-      Email Me
-    </button>
-  </a>
+<hr>
 
-  <a href="https://github.com/" target="_blank" style="text-decoration:none;">
-    <button style="padding:10px 15px; border:none; border-radius:8px; background:#64748b; color:white; cursor:pointer; margin-left:10px;">
-      GitHub
-    </button>
-  </a>
-</div>
-    <div class="section">
-      <h2>About Me</h2>
-      <hr>
-
-<section>
+<!-- MAIN AI TOOL -->
+<section style="text-align:center;">
   <h2>AI CV Generator</h2>
 
   <input id="name" placeholder="Your Name"><br><br>
@@ -107,33 +27,33 @@
 
   <pre id="output"></pre>
 </section>
-      <div class="box">
-        I am an aspiring web developer passionate about building modern and responsive websites. I am continuously improving my skills in HTML, CSS, and exploring AI tools.
-      </div>
-    </div>
 
-    <div class="section">
-      <h2>Skills</h2>
-      <div class="box">
-        <span class="badge">HTML</span>
-        <span class="badge">CSS</span>
-        <span class="badge">JavaScript</span>
-        <span class="badge">AI Tools</span>
-      </div>
-    </div>
+<hr>
 
-    <div class="section">
-      <h2>Contact</h2>
-      <div class="box">
-        cvbuilderhub@gmail.com  
-      </div>
-    </div>
+<!-- GUIDE -->
+<section style="max-width:600px; margin:auto;">
+  <h2>How does CV-Builder work?</h2>
 
-  </div>
-</div>
+  <ol>
+    <li>Enter your personal information in the fields above</li>
+    <li>Write your job title and skills</li>
+    <li>Click “Generate CV” button</li>
+    <li>Wait for AI to create your CV</li>
+    <li>Copy and use your generated CV anywhere</li>
+  </ol>
+</section>
 
-</body>
-</html>
+<hr>
+
+<!-- ABOUT -->
+<section style="max-width:600px; margin:auto;">
+  <h2>About Me</h2>
+  <p>
+    I am an aspiring web developer interested in building modern websites and learning new technologies including AI tools.
+  </p>
+</section>
+
+<!-- SCRIPT -->
 <script>
 async function generateCV() {
   let name = document.getElementById("name").value;
@@ -142,21 +62,10 @@ async function generateCV() {
 
   let prompt = `Write a professional CV. Name: ${name}. Job: ${job}. Skills: ${skills}`;
 
-  let response = await fetch("https://api.openai.com/v1/chat/completions", {
-    method: "POST",
-    headers: {
-      "Content-Type": "application/json",
-      "Authorization": "Bearer YOUR_API_KEY"
-    },
-    body: JSON.stringify({
-      model: "gpt-4o-mini",
-      messages: [{ role: "user", content: prompt }]
-    })
-  });
-
-  let data = await response.json();
-
   document.getElementById("output").innerText =
-    data.choices[0].message.content;
+    "AI feature will be connected soon...";
 }
-    </script>
+</script>
+
+</body>
+</html>
